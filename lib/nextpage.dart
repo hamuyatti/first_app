@@ -13,12 +13,13 @@ class NextPage extends StatelessWidget{
         title: Text('遷移先'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children:<Widget> [
           Center(
             child: RaisedButton(
-              child: Text('戻る'),
+              child: Text(name),
               onPressed: (){
-                Navigator.pop(context);
+                Navigator.pop(context,'ヤッホー');
              },
             ),
 

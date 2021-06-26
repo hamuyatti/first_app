@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
 
@@ -34,6 +35,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String text = "haa";
 
   void _incrementCounter() {
     setState(() {
@@ -49,13 +51,16 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: FlatButton(
-         child: Text('次へ'),
-          onPressed:(){
+         child: Text(text),
+          onPressed:() async{
           //画面遷移のコメント
-            Navigator.push(context,
-            MaterialPageRoute(builder: (context) => NextPage('hamu'))
+           final result = await Navigator.push(context,
+            MaterialPageRoute(builder: (context) => NextPage('meie'))
             );
+           text = result;
+            print(result);
          }
+
     ),
       ),
       floatingActionButton: FloatingActionButton(
