@@ -49,19 +49,36 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
          title: Text('はむやっち'),
       ),
-      body: Center(
-        child: FlatButton(
-         child: Text(text),
-          onPressed:() async{
-          //画面遷移のコメント
-           final result = await Navigator.push(context,
-            MaterialPageRoute(builder: (context) => NextPage('meie'))
-            );
-           text = result;
-            print(result);
-         }
+      body: Container(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text(
+                'hamu',
+                 style: TextStyle(
+                     fontSize: 40,
+                   color:Colors.green,
+                   fontWeight: FontWeight.w200,
+                   decoration: TextDecoration.underline
+                  )
+            ),
+            Text('paaa'),
+            FlatButton(
+             child: Text(text),
+              onPressed:() async{
+              //画面遷移のコメント
+               final result = await Navigator.push(context,
+                MaterialPageRoute(builder: (context) => NextPage('meie'))
+                );
+               text = result;
+                print(result);
+             }
 
     ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,

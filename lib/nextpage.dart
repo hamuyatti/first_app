@@ -15,6 +15,7 @@ class NextPage extends StatelessWidget{
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children:<Widget> [
+
           Center(
             child: RaisedButton(
               child: Text(name),
