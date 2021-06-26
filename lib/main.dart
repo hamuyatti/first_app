@@ -43,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         width: double.infinity,
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                    decoration: TextDecoration.underline
                   )
             ),
+            Image.network('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
             Text('paaa'),
             FlatButton(
              child: Text(text),
