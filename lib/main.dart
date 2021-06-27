@@ -27,7 +27,9 @@ class MyHomePage extends StatefulWidget {
 
 
 
-  final String title;
+  final String title ;
+
+
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -37,57 +39,37 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   String text = "haa";
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+
 
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
          title: Text('はむやっち'),
       ),
       body: Container(
         width: double.infinity,
-
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: ListView(
           children: <Widget>[
-            Text(
-                'hamu',
-                 style: TextStyle(
-                     fontSize: 40,
-                   color:Colors.green,
-                   fontWeight: FontWeight.w200,
-                   decoration: TextDecoration.underline
-                  )
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text("Map"),
             ),
-            Image.network('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
-            Text('paaa'),
-            FlatButton(
-             child: Text(text),
-              onPressed:() async{
-              //画面遷移のコメント
-               final result = await Navigator.push(context,
-                MaterialPageRoute(builder: (context) => NextPage('meie'))
-                );
-               text = result;
-                print(result);
-             }
-
-    ),
+            ListTile(
+              leading: Icon(Icons.arrow_back_ios_new),
+              trailing: Text("yaa"),
+              title: Text("album"),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text("phone"),
+            ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-      ),
-    );
 
+    ),
+    );
   }
 }
