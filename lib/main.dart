@@ -40,36 +40,30 @@ class _MyHomePageState extends State<MyHomePage> {
   String text = "haa";
 
 
-
-
   @override
-  Widget build(BuildContext context) {
+  final items = List<String>.generate(10000, (i) => "Item ");
 
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         title: Text('はむやっち'),
+        title: Text('はむやっち'),
       ),
       body: Container(
         width: double.infinity,
-        child: ListView(
-          children: <Widget>[
-            ListTile(
-              leading: Icon(Icons.map),
-              title: Text("Map"),
-            ),
-            ListTile(
-              leading: Icon(Icons.arrow_back_ios_new),
-              trailing: Text("yaa"),
-              title: Text("album"),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text("phone"),
-            ),
-          ],
-        ),
+        child: GridView.count(
+          crossAxisCount: 7,
+        children: List.generate(100, (index){
+          return Column(
+            children: <Widget>[
+             Image.network('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg')
+            ]
 
-    ),
+          );
+        })
+
+      ),
+      ),
     );
   }
+
 }
